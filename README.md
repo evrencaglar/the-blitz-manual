@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/images/the-blitz-logo.jpg" alt="The Blitz — Gold EA" width="640">
+</p>
+
 # The Blitz — Machine-Learning Gold Trading for MetaTrader 5
 
 **Version 1.06** · Symbol: **Gold (XAUUSD)** · Default chart timeframe: **H1** · Hedging account
@@ -24,6 +28,12 @@ The Blitz is a fully automated Expert Advisor for Gold, built on a machine-learn
 **Advanced order management for live trading.** Entries are only half the job — The Blitz actively manages every live order until it closes. Stops and targets sit on the broker's server from the first second, so your protection survives a disconnected PC. The trailing stop ratchets in your favor and never backwards. Time stops close stale positions at market. Execution is engineered for real conditions: spread and slippage gates before entry, broker stop-level and volume-step compliance handled automatically, partial fills accepted, and failed modifications logged instead of silently ignored. After a terminal restart, the EA re-reads its open positions and account history and resumes managing them exactly where it left off.
 
 **A dashboard that tells you when to worry — and when not to.** The Blitz ships with a state-of-the-art information panel that goes far beyond "profit so far". It continuously measures the current market regime, compares your live results against the strategy's historical reference profile (profit-factor drift, stagnation length, losing-streak statistics, volatility regime, and more), and flags when performance starts to resemble historically difficult periods. It is, in effect, a built-in early-warning system: you always know whether what you're seeing is normal variance or something worth acting on.
+
+<p align="center">
+  <img src="docs/images/dashboard-panels.png" alt="The Blitz dashboard and Quant Panel" width="720">
+</p>
+
+*The Blitz dashboard (left) and Quant Panel (right) on a live chart — here shown in a live CAUTION state: the panels had flagged that recent results resembled historical stagnation periods. This is the early-warning system doing its job.*
 
 **Ready out of the box.** Default settings are the intended configuration — Gold, H1 chart, conservative 0.01 lots per engine. No optimization, no parameter hunting. Attach, enable, done.
 

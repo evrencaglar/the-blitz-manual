@@ -2,6 +2,10 @@
 
 The Blitz shows two panels on the chart. The **dashboard** (left) answers *"what is the EA doing right now?"* The **Quant Panel** (right) answers *"is the strategy behaving the way its research history says it should?"*
 
+![The Blitz dashboard and Quant Panel on a live chart](images/dashboard-panels.png)
+
+*A real live view of both panels. This snapshot happens to show a CAUTION state — the Performance Bridge flagged that recent results resembled historical stagnation periods, and Market Health read drought-like conditions. Both engines stayed ACTIVE and kept trading normally: the panels inform, you decide. Every field visible here is explained below.*
+
 Both panels refresh on a 2-second timer. Statistics based on closed trades recompute after every closed position and at startup.
 
 ---
