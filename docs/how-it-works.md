@@ -10,7 +10,7 @@ The Blitz is a **machine-learning momentum system for Gold**:
 
 - **Machine learning, not hand-coded rules.** A statistical model — trained on years of historical Gold data — scores every completed bar and decides whether a trade is worth taking. It replaces the rigid "if indicator X crosses Y" logic of classic EAs with a learned estimate of expected return.
 - **Short-term momentum, both directions.** The Blitz trades long and short, aiming to capture decisive moves as they start. It is not a position trader and not a buy-and-hold system: the average trade lasts about 18 hours, and no trade is allowed to live longer than roughly a day.
-- **Two complementary engines.** Two instances of the strategy run side by side on different market rhythms (hourly and 4-hour). Each manages its own trades independently, and because they don't always move in lockstep, running both smooths the overall equity curve. The dashboard even shows you their live correlation.
+- **Two complementary models.** Two instances of the strategy — Mach 1 and Mach 2 — run side by side on separate timeframes. Each manages its own trades independently, and because they don't always move in lockstep, running both smooths the overall equity curve. The dashboard even shows you their live correlation.
 - **Selective by design.** Most bars produce no trade. Quiet days are a feature, not a malfunction — the model only engages when the expected edge clears its bar.
 
 ## Machine learning without the usual catch

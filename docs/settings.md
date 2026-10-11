@@ -10,10 +10,10 @@ Every input parameter of The Blitz v1.06, grouped exactly as in the EA's setting
 
 | Setting | Default | What it does |
 |---|---|---|
-| `Engine1_H1_Enabled` | `true` | Switches Mark 1 (the H1 engine) on or off. When off, it opens no new trades; existing ones are still managed to exit. |
-| `Engine2_H4_Enabled` | `true` | Same for Mark 2 (the H4 engine). |
-| `Engine1_Lots` | `0.01` | Fixed lot size for every Mark 1 trade. Ignored when auto sizing or dynamic scaling provides the size instead. |
-| `Engine2_Lots` | `0.01` | Fixed lot size for every Mark 2 trade. |
+| `Engine1_H1_Enabled` | `true` | Switches Mach 1 on or off. When off, it opens no new trades; existing ones are still managed to exit. |
+| `Engine2_H4_Enabled` | `true` | Same for Mach 2. |
+| `Engine1_Lots` | `0.01` | Fixed lot size for every Mach 1 trade. Ignored when auto sizing or dynamic scaling provides the size instead. |
+| `Engine2_Lots` | `0.01` | Fixed lot size for every Mach 2 trade. |
 | `MaxSpreadPoints` | `50` | Entry filter: if the current spread is wider than this (in points), the entry is skipped. Protects you from entering during thin or chaotic pricing. |
 
 ---
@@ -26,8 +26,8 @@ Every input parameter of The Blitz v1.06, grouped exactly as in the EA's setting
 | `RiskPercentPerTrade` | `1.0` | Base risk per trade in % of balance, used only when `UseAutoLotSize` is on. |
 | `MaxEffectiveRiskPercent` | `2.0` | Hard ceiling on the risk % after any dynamic-scaling boost. Even if scaling doubles your base risk, it can never exceed this. |
 | `MaxLots` | `1.0` | Absolute lot ceiling, regardless of sizing method. No Blitz position will ever be larger than this. |
-| `Engine1_MaxSLDollar` | `50.0` | Mark 1 entry gate: if the required stop distance is wider than $50 per ounce (high volatility), the trade is skipped. `0` disables the gate. |
-| `Engine2_MaxSLDollar` | `80.0` | Same gate for Mark 2 ($80/oz). |
+| `Engine1_MaxSLDollar` | `50.0` | Mach 1 entry gate: if the required stop distance is wider than $50 per ounce (high volatility), the trade is skipped. `0` disables the gate. |
+| `Engine2_MaxSLDollar` | `80.0` | Same gate for Mach 2 ($80/oz). |
 
 **How auto sizing works (plain version):** the EA measures the stop distance, converts it to money using your broker's contract specification, and picks the lot size that puts your chosen % at risk. It **never rounds up** to the broker's minimum volume — if even the minimum lot would risk more than your budget, the trade is skipped entirely.
 
@@ -116,17 +116,17 @@ Example: block 12:00–14:00 to skip the thin lunch hours, or block the rollover
 
 ---
 
-## Mark 1 trailing
+## Mach 1 trailing
 
 | Setting | Default | What it does |
 |---|---|---|
-| `Engine1_UseTrailing` | `true` | Enables the trailing stop for Mark 1. |
+| `Engine1_UseTrailing` | `true` | Enables the trailing stop for Mach 1. |
 | `Engine1_TrailTriggerMult` | `1.0` | Activation: once price has moved in your favor by this multiple of the **initial** stop distance, trailing starts. 1.0 = after +1 R of open profit. |
 | `Engine1_TrailDistMult` | `1.0` | Trail distance: the stop follows this multiple of the initial stop distance behind the current price. The stop only ever moves in your favor, never backwards. |
 
-## Mark 2 trailing
+## Mach 2 trailing
 
-Same meaning for the H4 engine. Defaults are tighter because Mark 2's winners are shorter-lived: trigger `0.75`, distance `0.5`.
+Same meaning for Mach 2. Defaults are tighter because Mach 2's winners are shorter-lived: trigger `0.75`, distance `0.5`.
 
 | Setting | Default |
 |---|---|

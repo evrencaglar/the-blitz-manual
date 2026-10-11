@@ -20,7 +20,7 @@ That's exactly what the Quant Panel is for: it compares your live results agains
 ## Getting started
 
 **Which symbol and timeframe should I use?**
-Gold (your broker's XAUUSD symbol) with the chart on **H1** — that is the default, tested configuration. The engines read their own H1 and H4 data internally, so attaching to a different chart timeframe does not break anything, but H1 is recommended.
+Gold (your broker's XAUUSD symbol) with the chart on **H1** — that is the default, tested configuration. The two models read their own separate timeframes internally, so attaching to a different chart timeframe does not break anything, but H1 is recommended.
 
 **Which account type do I need?**
 A **hedging** MetaTrader 5 account. On netting accounts the EA prints "The Blitz requires an MT5 hedging account" and refuses to start. If you are unsure which type you have, ask your broker — the account specification states it, and many brokers can convert or open a hedging sub-account.
@@ -38,8 +38,8 @@ Not required, but strongly recommended. The Blitz manages stops on the broker se
 
 This is the most common question, and the answer is almost always one of these, roughly in order:
 
-1. **The model sees no qualifying setup.** The Blitz is selective by design; quiet stretches of a day or more are normal, especially for Mark 2 (H4 bars + session filter). This is the usual reason.
-2. **The Mark card says PAUSED.** Mark 2's circuit breaker triggered after 3 consecutive losses and is resting for 5 days. It resumes by itself.
+1. **The model sees no qualifying setup.** The Blitz is selective by design; quiet stretches of a day or more are normal, especially for Mach 2, which is the slower model and additionally has a session filter. This is the usual reason.
+2. **The Mach card says PAUSED.** Mach 2's circuit breaker triggered after 3 consecutive losses and is resting for 5 days. It resumes by itself.
 3. **The spread gate.** If your broker's Gold spread regularly exceeds 50 points, entries are skipped. Either trade during liquid hours or raise `MaxSpreadPoints` cautiously.
 4. **News filter active.** Check the footer: `NEWS WINDOW / entries paused` or `Calendar unavailable / entries paused` both block entries.
 5. **Time blocks / schedules.** A daily block window or an end-of-day close you configured is active.

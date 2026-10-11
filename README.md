@@ -12,7 +12,7 @@ The Blitz is a fully automated Expert Advisor for Gold, built on a machine-learn
 
 ## What The Blitz is — in one page
 
-**A disciplined, model-driven Gold trader.** The Blitz evaluates the market on every completed bar using a machine-learning model trained on years of Gold price behavior. It trades in both directions (long and short), holds positions for hours rather than weeks, and only enters when the model sees a statistically meaningful edge. Two complementary internal engines work side by side — one tuned to the hourly rhythm of the market, one to the slower 4-hour rhythm — smoothing each other's results.
+**A disciplined, model-driven Gold trader.** The Blitz evaluates the market on every completed bar using a machine-learning model trained on years of Gold price behavior. It trades in both directions (long and short), holds positions for hours rather than weeks, and only enters when the model sees a statistically meaningful edge. Two complementary internal models — **Mach 1** and **Mach 2**, each running on its own separate timeframe — work side by side, smoothing each other's results.
 
 **Machine learning, done honestly.** The uncomfortable truth about ML-based trading systems is overfitting: a model can memorize the past instead of learning from it. The Blitz was built to survive that test. The model was developed on historical data **through the end of 2024 only** — and the entire period of **2025 and 2026 was reserved as untouched out-of-sample data**. No tuning, no adjustments, no peeking. That out-of-sample window covers some of the most erratic Gold price behavior in years — the violent rallies, sharp reversals, and volatility spikes of 2025–2026 — and the strategy kept performing on data it had never seen:
 

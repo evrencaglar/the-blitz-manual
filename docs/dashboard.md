@@ -2,6 +2,8 @@
 
 The Blitz shows two panels on the chart. The **dashboard** (left) answers *"what is the EA doing right now?"* The **Quant Panel** (right) answers *"is the strategy behaving the way its research history says it should?"*
 
+> Terminology: the two models are called **Mach 1** and **Mach 2** throughout this manual; the on-chart panels label their cards **MARK 1** and **MARK 2**. Same models, two labels.
+
 ![The Blitz dashboard and Quant Panel on a live chart](images/dashboard-panels.png)
 
 *A real live view of both panels. This snapshot happens to show a CAUTION state — the Performance Bridge flagged that recent results resembled historical stagnation periods, and Market Health read drought-like conditions. Both engines stayed ACTIVE and kept trading normally: the panels inform, you decide. Every field visible here is explained below.*
@@ -109,7 +111,7 @@ Sharpe-style ratio (S) and R² of a straight line fitted to the last 30 complete
 Value-at-Risk: on the worst 5 % of days (of the last 60 completed sessions), the stream lost at least this much. If you set a daily loss limit, the row compares against it and turns **red** when typical bad days would breach your limit — a hint to loosen the limit or reduce size.
 
 **8. MARK DIVERSIFICATION** — `corr +0.21`
-Correlation between Mark 1 and Mark 2 daily results over 60 completed sessions. Low or negative correlation means the two engines smooth each other — that is the point of running both.
+Correlation between Mach 1 and Mach 2 daily results over 60 completed sessions. Low or negative correlation means the two models smooth each other — that is the point of running both.
 
 **9. VOLATILITY REGIME / SHARED D1** — `74th pct`
 Where today's volatility (ATR14 on daily bars) ranks against the last 504 trading days. One shared value for both columns, since both engines trade the same market. High percentiles = unusually volatile conditions (wider stops, larger swings).
@@ -125,7 +127,7 @@ Status of the data feeds: `TICK TIME COVERAGE 96.3% / 1,240,551 quotes / 2026.10
 
 ## A practical reading routine
 
-1. **Glance at the Mark cards** — both ACTIVE? Good.
+1. **Glance at the Mach cards** — both ACTIVE? Good.
 2. **Check the footer** — any limit hit or news block explains quiet periods instantly.
 3. **Weekly, read the Quant Panel LIVE column top to bottom** — expectancy interval still positive? PF30 drift within ±2σ? Loss run under 8? Then the strategy is inside its historical envelope.
 4. **Treat single red cells as information, not alarms.** The pattern that matters is several rows degrading together over weeks — that is what the CAUTION verdict on the Performance Bridge aggregates for you.
