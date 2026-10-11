@@ -1,5 +1,22 @@
 # FAQ & Troubleshooting
 
+## About the strategy
+
+**What kind of system is it — trend following, mean reversion, scalping?**
+The Blitz is a short-term **momentum system driven by a machine-learning model**, trading Gold in both directions. It aims to catch decisive moves early and get out within about a day — the average trade lasts ~18 hours. It is neither a scalper fighting the spread nor a position trader holding for weeks.
+
+**Is it really machine learning, or marketing?**
+Really. Every bar is scored by a trained statistical model rather than fixed indicator rules. The important part is how it was validated: the model was trained only on data through the end of 2024, and **2025–2026 was kept as a fully untouched out-of-sample test**. On that unseen data — an unusually erratic Gold market — the backtest shows profit factor 1.69 over 539 trades, matching the full-period 1.68. That consistency is the answer to the overfitting concern every ML-based EA raises.
+
+**Does it use martingale, grid, or averaging down?**
+No. Every trade is independent, opens with its own hard stop loss and take profit, and risks a fixed, predefined amount. You can verify this in your own account history within days: one position per signal, never more than 2 open per engine, no recovery sizing.
+
+**What win rate and drawdown should I expect?**
+In the 2019–2026 real-tick backtest (fixed 0.01 lots): win rate 60.9 %, profit factor 1.68, maximum equity drawdown 0.54 %. These describe strategy quality at minimum size — your absolute numbers scale with your lot size. Losing streaks still happen: runs of 8+ losses occurred historically in about 4.8 % of cases, and the longest stagnation lasted 291 days. Size your account so a bad month is uncomfortable, never fatal.
+
+**How will I know if it stops working?**
+That's exactly what the Quant Panel is for: it compares your live results against the strategy's historical reference profile (expectancy, profit-factor drift, stagnation, losing streaks, and more) and flags when performance leaves the normal envelope. You get an early warning before it shows in your balance. See [dashboard.md](dashboard.md).
+
 ## Getting started
 
 **Which symbol and timeframe should I use?**
